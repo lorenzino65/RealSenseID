@@ -62,7 +62,7 @@ option(RSID_SAMPLES "Build samples" OFF)
 option(RSID_TIDY "Enable clang-tidy" OFF)
 option(RSID_DOXYGEN "Build doxygen docs" OFF)
 option(RSID_SECURE "Enable secure communication with device" OFF)
-option(RSID_TOOLS "Build additional tools" ON)
+option(RSID_TOOLS "Build additional tools" OFF)
 
 # install option
 if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Android")
@@ -114,6 +114,7 @@ endif ()
 
 add_subdirectory(src)
 add_subdirectory(wrappers)
+add_subdirectory(mine)
 
 if(RSID_INSTALL)
     include (cmake/Install.cmake)
